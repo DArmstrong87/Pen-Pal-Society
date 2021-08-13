@@ -1,5 +1,3 @@
-
-
 const API = "http://localhost:8088"
 
 export const fetchAuthors = () => {
@@ -35,7 +33,6 @@ export const applicationState = {
     topics: [],
     letters: []
 }
-console.log(applicationState)
 
 export const getAuthors = () => {
     return applicationState.authors.map(author => ({ ...author }))
