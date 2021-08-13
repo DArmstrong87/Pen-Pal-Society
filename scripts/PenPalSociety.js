@@ -1,4 +1,5 @@
 import { LetterForm } from "./LetterForm.js"
+import { Letters } from "./Letters.js"
 
 
 export const penPalSociety = () => {
@@ -10,7 +11,7 @@ export const penPalSociety = () => {
     </article>
     <p>
     <article>
-        Sent Letters Go Here
+        ${Letters()}
     </article>
     `
 }

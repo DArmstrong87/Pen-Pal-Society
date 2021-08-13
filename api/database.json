@@ -1,51 +1,67 @@
 {
-    "authors": [
-      {
-        "id": 1,
-        "name": "Maya Angelou"
-      },
-      {
-        "id": 2,
-        "name": "Edgar Allan Poe"
-      },
-      {
-        "id": 3,
-        "name": "William Shakespeare"
-      },
-      {
-        "id": 4,
-        "name": "Edgar Allen Poe"
-      }
-    ],
-    "topics": [
-      {
-        "id": 1,
-        "name": "Business"
-      },
-      {
-        "id": 2,
-        "name": "Friendly"
-      },
-      {
-        "id": 3,
-        "name": "Family"
-      },
-      {
-        "id": 4,
-        "name": "Congratulations"
-      },
-      {
-        "id": 5,
-        "name": "Condolences"
-      }
-    ],
-    "letters": [
-      {
-        "id": 1,
-        "authorId": 2,
-        "recipientId": 3,
-        "topicId": 2,
-        "letterBody": "Hey just writing to remind you about what I stored under your floorboards. Kthx!"
-      }
-    ]
-  }
+  "authors": [
+    {
+      "id": 1,
+      "name": "Maya Angelou"
+    },
+    {
+      "id": 2,
+      "name": "Edgar Allan Poe"
+    },
+    {
+      "id": 3,
+      "name": "William Shakespeare"
+    },
+    {
+      "id": 4,
+      "name": "Edgar Allen Poe"
+    }
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "name": "Business"
+    },
+    {
+      "id": 2,
+      "name": "Friendly"
+    },
+    {
+      "id": 3,
+      "name": "Family"
+    },
+    {
+      "id": 4,
+      "name": "Congratulations"
+    },
+    {
+      "id": 5,
+      "name": "Condolences"
+    }
+  ],
+  "letters": [
+    {
+      "id": 1,
+      "authorId": 2,
+      "recipientId": 3,
+      "topicId": 2,
+      "letterBody": "Hey just writing to remind you about what I stored under your floorboards. Kthx!"
+    },
+    {
+      "authorId": 1,
+      "letterBody": "Hello there",
+      "topicId": 1,
+      "recipientId": 1,
+      "dateSent": 1628886891734,
+      "id": 2
+    },
+    {
+      "authorId": 1,
+      "letterBody": "AHHHH",
+      "topicId": 1,
+      "recipientId": 1,
+      "dateSent": 1628887947562,
+      "id": 3
+    }
+  ]
+}

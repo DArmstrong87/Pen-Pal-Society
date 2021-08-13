@@ -15,3 +15,10 @@ const renderAll = () => {
 }
 
 renderAll()
+
+mainContainer.addEventListener(
+    "stateChanged",
+    customEvent => {
+        renderAll()
+    }
+)
