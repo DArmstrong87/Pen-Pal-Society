@@ -1,13 +1,12 @@
-import { getAuthors, getLetters, getTopics, sendLetter } from "./dataAccess.js";
-
+import { getAuthors, getTopics, sendLetter } from "./dataAccess.js";
 
 document.addEventListener("click",
     click => {
         if (click.target.name === 'sendLetter') {
-            const userAuthor = document.querySelector("option[name='author']").value
-            const userLetter = document.querySelector("textarea[name='letterArea']").value
-            const userTopic = document.querySelector("input[name='topic']").value
-            const userRecipient = document.querySelector("option[name='recipient']").value
+            let userAuthor = document.querySelector("option[name='author']").value
+            let userLetter = document.querySelector("textarea[name='letterArea']").value
+            let userTopic = document.querySelector("input[name='topic']").value
+            let userRecipient = document.querySelector("option[name='recipient']").value
 
             const dataToSendToAPI = {
                 authorId: parseInt(userAuthor),
@@ -16,9 +15,7 @@ document.addEventListener("click",
                 recipientId: parseInt(userRecipient),
                 dateSent: Date.now()
             }
-
             sendLetter(dataToSendToAPI)
-
         }
     }
 )
@@ -40,7 +37,7 @@ export const LetterForm = () => {
         <label class="field" for="letterArea">Letter</label>
         <textarea name="letterArea" rows="10" cols="30"></textarea>
     </div>
-    <div class="field">
+    <div class="topic-radios">
         ${topics.map(topic => {
         return `
             <input name="topic" type="radio" value="${topic.id}">${topic.name}</input>`
@@ -51,7 +48,7 @@ export const LetterForm = () => {
         <select name="recipients" class="input"/>
         <option value="" class="recipient-option" disabled selected> --Select--</option>
             ${authors.map(author => {
-        return `<option value="${author.id}" class="author-option" name="recipient">${author.name}</option>`
+        return `<option value="${author.id}" class="recipient-option" name="recipient">${author.name}</option>`
     })}
     </select></div>
     <button name="sendLetter">Send Letter</button>

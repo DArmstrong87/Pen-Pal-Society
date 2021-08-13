@@ -1,0 +1,13 @@
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0px 0px 10px 10px;
+}
+
+.topic-radios {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 0px 10px 10px;
+}
