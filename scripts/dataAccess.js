@@ -6,8 +6,8 @@ export const fetchAuthors = () => {
     return fetch(`${API}/authors`)
         .then(response => response.json())
         .then(
-            (authors) => {
-                applicationState.authors = authors
+            (authorsArray) => {
+                applicationState.authors = authorsArray
             }
         )
 }
@@ -15,23 +15,34 @@ export const fetchTopics = () => {
     return fetch(`${API}/topics`)
         .then(response => response.json())
         .then(
-            (topics) => {
-                applicationState.topics = topics
+            (topicsArray) => {
+                applicationState.topics = topicsArray
             }
         )
 }
 export const fetchLetters = () => {
-    return fetch(`${API}/authors`)
+    return fetch(`${API}/letters`)
         .then(response => response.json())
         .then(
-            (letters) => {
-                applicationState.letters = letters
+            (lettersArray) => {
+                applicationState.letters = lettersArray
             }
         )
 }
 
-const applicationState = {
+export const applicationState = {
     authors: [],
     topics: [],
     letters: []
+}
+console.log(applicationState)
+
+export const getAuthors = () => {
+    return applicationState.authors.map(author => ({ ...author }))
+}
+export const getTopics = () => {
+    return applicationState.topics.map(topic => ({ ...topic }))
+}
+export const getLetters = () => {
+    return applicationState.letters.map(letter => ({ ...letter }))
 }
