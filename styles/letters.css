@@ -9,6 +9,10 @@
     max-width: 25em;
 }
 
+.topics-p {
+    display: flex;
+}
+
 .topic {
     background-color: goldenrod;
     border: 1px solid black;

@@ -1,6 +1,6 @@
 import { getLetters } from "./dataAccess.js"
 import { LetterForm } from "./LetterForm.js"
-// import { Letters } from "./Letters.js"
+import { Letters } from "./Letters.js"
 
 
 export const penPalSociety = () => {
@@ -14,7 +14,7 @@ export const penPalSociety = () => {
     </article>
     <p>
     <article>
+        ${Letters()}
     </article>
     `
 }
-// ${Letters()}

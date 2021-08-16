@@ -45,17 +45,11 @@
   ],
   "letters": [
     {
-      "id": 1,
-      "authorId": 4,
-      "recipientId": 3,
-      "topicId": 2,
-      "dateSent": 1628886891734,
-      "letterBody": "Hey just writing to remind you about what I stored under your floorboards. Kthx!"
-    },
-    {
       "authorId": 3,
       "letterBody": "All the world’s a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts.",
-      "topicId": 1,
+      "topicId": [
+        1
+      ],
       "recipientId": 1,
       "dateSent": 1628886891734,
       "id": 2
@@ -63,7 +57,9 @@
     {
       "authorId": 1,
       "letterBody": "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
-      "topicId": 1,
+      "topicId": [
+        1
+      ],
       "recipientId": 2,
       "dateSent": 1628887947562,
       "id": 3
@@ -71,7 +67,9 @@
     {
       "authorId": 3,
       "letterBody": "Good night, good night! parting is such sweet sorrow, That I shall say good night till it be morrow.",
-      "topicId": 2,
+      "topicId": [
+        2
+      ],
       "recipientId": 4,
       "dateSent": 1629072539208,
       "id": 4
@@ -79,7 +77,9 @@
     {
       "authorId": 4,
       "letterBody": "Quoth the raven, \"Nevermore!\"",
-      "topicId": 5,
+      "topicId": [
+        5
+      ],
       "recipientId": 2,
       "dateSent": 1629077595066,
       "id": 5
@@ -87,35 +87,12 @@
     {
       "authorId": 4,
       "letterBody": "Raven",
-      "topicId": 3,
+      "topicId": [
+        3
+      ],
       "recipientId": 2,
       "dateSent": 1629123158874,
       "id": 6
-    },
-    {
-      "authorId": 3,
-      "letterBody": "sfdsadgras",
-      "topicId": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "recipientId": 4,
-      "dateSent": 1629131137317,
-      "id": 8
-    },
-    {
-      "authorId": 3,
-      "letterBody": "degsrftetr",
-      "topicId": [
-        1,
-        2
-      ],
-      "recipientId": 2,
-      "dateSent": 1629131289168,
-      "id": 9
     }
   ]
 }

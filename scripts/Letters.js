@@ -26,19 +26,26 @@ export const Letters = () => {
                     return author.id === letter.recipientId
                 }
             )
-            const foundTopic = topics.filter(
-                topic => {
-                    return topic.id === letter.topicId
+            const letterTopics = letter.topicId //array
+            let foundTopics = []
+            for (const letterTopic of letterTopics) {
+                for (const topic of topics) {
+                    if (letterTopic === topic.id) {
+                        foundTopics.push(topic)
+                    }
                 }
-            )
+            }
             const dateSent = new Date(letter.dateSent)
-            
             return `
             <div class="letters">
                 Dear ${foundRecipient.name} (${foundRecipient.email})
                 <p>${letter.letterBody}</p>
                 <p>Sincerely, ${foundAuthor.name} (${foundAuthor.email})</p>
-                <p><div class="topic">${foundTopic.map(topic => {return topic.name})}</div></p>
+                <p class="topics-p">
+                ${foundTopics.map(foundTopic => {
+                return `<div class="topic">${foundTopic.name}</div>`
+            }).join("")}
+                </p>
                 <p class="date">Sent on ${dateSent}</p>
                 <div class="deleteDiv">
                     <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete</button>
