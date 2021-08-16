@@ -3,10 +3,10 @@ import { getAuthors, getTopics, sendLetter } from "./dataAccess.js";
 document.addEventListener("click",
     click => {
         if (click.target.name === 'sendLetter') {
-            let userAuthor = document.querySelector("option[name='author']").value
+            let userAuthor = document.querySelector("select[name='authors']").value
             let userLetter = document.querySelector("textarea[name='letterArea']").value
-            let userTopic = document.querySelector("input[name='topic']").value
-            let userRecipient = document.querySelector("option[name='recipient']").value
+            let userTopic = document.querySelector("input[name='topic']:checked").value
+            let userRecipient = document.querySelector("select[name='recipients']").value
 
             const dataToSendToAPI = {
                 authorId: parseInt(userAuthor),
