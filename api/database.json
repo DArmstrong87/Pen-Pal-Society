@@ -120,6 +120,18 @@
       "recipientId": 4,
       "dateSent": 1629138328776,
       "id": 9
+    },
+    {
+      "authorId": 2,
+      "letterBody": "Hello Steve",
+      "topicId": [
+        2,
+        3,
+        4
+      ],
+      "recipientId": 3,
+      "dateSent": 1629140749880,
+      "id": 10
     }
   ]
 }

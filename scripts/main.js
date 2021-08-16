@@ -5,8 +5,8 @@ export const mainContainer = document.querySelector('#mainContainer')
 
 const renderAll = () => {
     fetchAuthors()
-    fetchLetters()
-    fetchTopics()
+        .then(fetchTopics)
+        .then(fetchLetters)
         .then(
             () => {
                 mainContainer.innerHTML = penPalSociety()
