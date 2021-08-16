@@ -26,18 +26,19 @@ export const Letters = () => {
                     return author.id === letter.recipientId
                 }
             )
-            const foundTopic = topics.find(
+            const foundTopic = topics.filter(
                 topic => {
                     return topic.id === letter.topicId
                 }
             )
             const dateSent = new Date(letter.dateSent)
+            
             return `
             <div class="letters">
                 Dear ${foundRecipient.name} (${foundRecipient.email})
                 <p>${letter.letterBody}</p>
                 <p>Sincerely, ${foundAuthor.name} (${foundAuthor.email})</p>
-                <p><div class="topic">${foundTopic.name}</div></p>
+                <p><div class="topic">${foundTopic.map(topic => {return topic.name})}</div></p>
                 <p class="date">Sent on ${dateSent}</p>
                 <div class="deleteDiv">
                     <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete</button>

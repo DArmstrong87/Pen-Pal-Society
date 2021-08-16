@@ -5,7 +5,12 @@ document.addEventListener("click",
         if (click.target.name === 'sendLetter') {
             let userAuthor = document.querySelector("select[name='authors']").value
             let userLetter = document.querySelector("textarea[name='letterArea']").value
-            let userTopic = document.querySelector("input[name='topic']:checked").value
+            let userTopics = []
+            let allTopics = document.getElementsByName("input[name='topic']:checked").forEach(
+                topic => {
+                    userTopics.push(topic)
+                }
+            )
             let userRecipient = document.querySelector("select[name='recipients']").value
             if (userAuthor === userRecipient) {
                 window.alert('You cannot send a letter to yourself.')
@@ -13,7 +18,7 @@ document.addEventListener("click",
                 const dataToSendToAPI = {
                     authorId: parseInt(userAuthor),
                     letterBody: userLetter,
-                    topicId: parseInt(userTopic),
+                    topicId: userTopics,
                     recipientId: parseInt(userRecipient),
                     dateSent: Date.now()
                 }
@@ -40,10 +45,10 @@ export const LetterForm = () => {
         <label class="field" for="letterArea">Letter</label>
         <textarea name="letterArea" rows="10" cols="30"></textarea>
     </div>
-    <div class="topic-radios">
+    <div class="topic-checkboxes">
         ${topics.map(topic => {
         return `
-            <input class="topic-radio" name="topic" type="radio" value="${topic.id}">${topic.name}</input>`
+            <input class="topic-checkbox" name="topic" type="checkbox" value="${topic.id}">${topic.name}</input>`
     }).join("")}
     </div>
     <div class="field">
