@@ -11,3 +11,19 @@
     flex-wrap: wrap;
     margin: 0px 0px 10px 10px;
 }
+
+.letters {
+    background-color: skyblue;
+    margin-bottom: 5px;
+    list-style-type: none;
+    padding: 5px;
+    max-width: 20em;
+}
+
+.topic {
+    border-radius: 10%;
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 30%;
+    padding: 3px;
+}

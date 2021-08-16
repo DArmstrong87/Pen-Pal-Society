@@ -7,15 +7,18 @@ document.addEventListener("click",
             let userLetter = document.querySelector("textarea[name='letterArea']").value
             let userTopic = document.querySelector("input[name='topic']:checked").value
             let userRecipient = document.querySelector("select[name='recipients']").value
-
-            const dataToSendToAPI = {
-                authorId: parseInt(userAuthor),
-                letterBody: userLetter,
-                topicId: parseInt(userTopic),
-                recipientId: parseInt(userRecipient),
-                dateSent: Date.now()
+            if (userAuthor === userRecipient) {
+                window.alert('You cannot send to yourself')
+            } else {
+                const dataToSendToAPI = {
+                    authorId: parseInt(userAuthor),
+                    letterBody: userLetter,
+                    topicId: parseInt(userTopic),
+                    recipientId: parseInt(userRecipient),
+                    dateSent: Date.now()
+                }
+                sendLetter(dataToSendToAPI)
             }
-            sendLetter(dataToSendToAPI)
         }
     }
 )
