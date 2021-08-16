@@ -4,8 +4,6 @@ import { Letters } from "./Letters.js"
 
 
 export const penPalSociety = () => {
-    const letters = getLetters()
-    console.log(letters)
     return `
     <h2>Pen Pal Society</h2>
 

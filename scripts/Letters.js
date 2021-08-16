@@ -27,7 +27,7 @@ export const Letters = () => {
                 }
             )
             const letterTopics = letter.topicId //array
-            let foundTopics = []
+            const foundTopics = []
             for (const letterTopic of letterTopics) {
                 for (const topic of topics) {
                     if (letterTopic === topic.id) {
@@ -47,7 +47,8 @@ export const Letters = () => {
                 </div>
                 <p class="date">Sent on ${dateSent}</p>
                 <div class="deleteDiv">
-                    <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete</button>
+                    <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete
+                    </button>
                 </div>
             </div>`
         }
