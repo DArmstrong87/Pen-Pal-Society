@@ -11,39 +11,33 @@ export const Letters = () => {
     const authors = getAuthors()
     const topics = getTopics()
     const letters = getLetters()
-    const foundAuthor = authors.filter(
-        author => {
-            for (const letter of letters) {
-                return author.id === letter.authorId
-            }
-        }
-    )
-    const foundRecipient = authors.filter(
-        author => {
-            for (const letter of letters) {
-                return author.id === letter.recipientId
-            }
-        }
-    )
-    const foundTopic = topics.filter(
-        topic => {
-            for (const letter of letters) {
-                return topic.id === letter.topicId
-            }
-        }
-    )
-    console.log(letters)
 
+    console.log(letters)
     return ` 
     ${letters.map(
         letter => {
+            const foundAuthor = authors.find(
+                author => {
+                    return author.id === letter.authorId
+                }
+            )
+            const foundRecipient = authors.find(
+                author => {
+                    return author.id === letter.recipientId
+                }
+            )
+            const foundTopic = topics.find(
+                topic => {
+                    return topic.id === letter.topicId
+                }
+            )
             return `
             <div class="letters">
-            Dear ${foundAuthor.name} (${foundAuthor.email})
+            Dear ${foundRecipient.name} (${foundRecipient.email})
             <p>${letter.letterBody}
             </p>
             <p>
-            Sincerely, ${foundRecipient.name} (${foundRecipient.email})
+            Sincerely, ${foundAuthor.name} (${foundAuthor.email})
             </p>
             <p>
             <dic class="topic">${foundTopic.name}</div>
