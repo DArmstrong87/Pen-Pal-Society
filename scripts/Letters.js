@@ -34,21 +34,14 @@ export const Letters = () => {
             const dateSent = new Date(letter.dateSent)
             return `
             <div class="letters">
-            Dear ${foundRecipient.name} (${foundRecipient.email})
-            <p>${letter.letterBody}
-            </p>
-            <p>
-            Sincerely, ${foundAuthor.name} (${foundAuthor.email})
-            </p>
-            <p>
-            <div class="topic">${foundTopic.name}</div>
-            </p>
-            <p class="date">
-            Sent on ${dateSent}
-            </p>
-            <div class="deleteDiv">
-            <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete</button>
-            </div>
+                Dear ${foundRecipient.name} (${foundRecipient.email})
+                <p>${letter.letterBody}</p>
+                <p>Sincerely, ${foundAuthor.name} (${foundAuthor.email})</p>
+                <p><div class="topic">${foundTopic.name}</div></p>
+                <p class="date">Sent on ${dateSent}</p>
+                <div class="deleteDiv">
+                    <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete</button>
+                </div>
             </div>`
         }
     ).join("")}

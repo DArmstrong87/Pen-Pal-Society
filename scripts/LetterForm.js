@@ -8,7 +8,7 @@ document.addEventListener("click",
             let userTopic = document.querySelector("input[name='topic']:checked").value
             let userRecipient = document.querySelector("select[name='recipients']").value
             if (userAuthor === userRecipient) {
-                window.alert('You cannot send to yourself')
+                window.alert('You cannot send a letter to yourself.')
             } else {
                 const dataToSendToAPI = {
                     authorId: parseInt(userAuthor),
@@ -31,8 +31,8 @@ export const LetterForm = () => {
     <div class="field">
         <label class="label" for="authors">Authors</label>
         <select name="authors" class="input authors-menu"/>
-        <option value="" class="author-option" disabled selected> --Select--</option>
-            ${authors.map(author => {
+            <option value="" class="author-option" disabled selected> --Select--</option>
+                ${authors.map(author => {
         return `<option value="${author.id}" name="author" class="author-option">${author.name}</option>`
     })}
         </select></div>
@@ -49,8 +49,8 @@ export const LetterForm = () => {
     <div class="field">
         <label class="label" for="recipients">Recipients</label>
         <select name="recipients" class="input authors-menu"/>
-        <option value="" class="recipient-option" disabled selected> --Select--</option>
-            ${authors.map(author => {
+            <option value="" class="recipient-option" disabled selected> --Select--</option>
+                ${authors.map(author => {
         return `<option value="${author.id}" class="recipient-option" name="recipient">${author.name}</option>`
     })}
     </select>
