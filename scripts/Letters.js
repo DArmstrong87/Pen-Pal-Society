@@ -41,11 +41,10 @@ export const Letters = () => {
                 Dear ${foundRecipient.name} (${foundRecipient.email})
                 <p>${letter.letterBody}</p>
                 <p>Sincerely, ${foundAuthor.name} (${foundAuthor.email})</p>
-                <p class="topics-p">
-                ${foundTopics.map(foundTopic => {
+                <div class="topics-p">${foundTopics.map(foundTopic => {
                 return `<div class="topic">${foundTopic.name}</div>`
             }).join("")}
-                </p>
+                </div>
                 <p class="date">Sent on ${dateSent}</p>
                 <div class="deleteDiv">
                     <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete</button>
