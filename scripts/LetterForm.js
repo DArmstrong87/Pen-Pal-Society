@@ -30,7 +30,7 @@ export const LetterForm = () => {
     return `
     <div class="field">
         <label class="label" for="authors">Authors</label>
-        <select name="authors" class="input"/>
+        <select name="authors" class="input authors-menu"/>
         <option value="" class="author-option" disabled selected> --Select--</option>
             ${authors.map(author => {
         return `<option value="${author.id}" name="author" class="author-option">${author.name}</option>`
@@ -43,17 +43,18 @@ export const LetterForm = () => {
     <div class="topic-radios">
         ${topics.map(topic => {
         return `
-            <input name="topic" type="radio" value="${topic.id}">${topic.name}</input>`
+            <input class="topic-radio" name="topic" type="radio" value="${topic.id}">${topic.name}</input>`
     }).join("")}
     </div>
     <div class="field">
         <label class="label" for="recipients">Recipients</label>
-        <select name="recipients" class="input"/>
+        <select name="recipients" class="input authors-menu"/>
         <option value="" class="recipient-option" disabled selected> --Select--</option>
             ${authors.map(author => {
         return `<option value="${author.id}" class="recipient-option" name="recipient">${author.name}</option>`
     })}
-    </select></div>
-    <button name="sendLetter">Send Letter</button>
+    </select>
+    <button class="sendLetter" name="sendLetter">Send Letter</button>
+    </div>
     `
 }

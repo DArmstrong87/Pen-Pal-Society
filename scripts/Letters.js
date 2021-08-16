@@ -11,9 +11,9 @@ export const Letters = () => {
     const authors = getAuthors()
     const topics = getTopics()
     const letters = getLetters()
-
     console.log(letters)
     return ` 
+    <div class="letters-container">
     ${letters.map(
         letter => {
             const foundAuthor = authors.find(
@@ -31,6 +31,7 @@ export const Letters = () => {
                     return topic.id === letter.topicId
                 }
             )
+            const dateSent = new Date(letter.dateSent)
             return `
             <div class="letters">
             Dear ${foundRecipient.name} (${foundRecipient.email})
@@ -40,11 +41,17 @@ export const Letters = () => {
             Sincerely, ${foundAuthor.name} (${foundAuthor.email})
             </p>
             <p>
-            <dic class="topic">${foundTopic.name}</div>
+            <div class="topic">${foundTopic.name}</div>
             </p>
-            <button name="deleteLetter" id="delete--${letter.id}">Delete</button>
+            <p class="date">
+            Sent on ${dateSent}
+            </p>
+            <div class="deleteDiv">
+            <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete</button>
+            </div>
             </div>`
         }
     ).join("")}
+    </div>
     `
 }

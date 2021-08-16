@@ -1,0 +1,31 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0px 0px 10px 20px;
+}
+
+.authors-menu {
+    background-color: skyblue;
+    border-radius: 2em;
+}
+
+.recipients-menu {
+    background-color: skyblue;
+    border-radius: 2em;
+}
+
+.topic-radios {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: max-content;
+    margin: 0px 0px 10px 10px;
+}
+
+.sendLetter {
+    border: 1px solid black;
+    margin-top: 10px;
+    max-width: fit-content;
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}

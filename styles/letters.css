@@ -1,0 +1,32 @@
+.letters-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.letters {
+    background-color: skyblue;
+    margin: 10px;
+    padding: 5px;
+    max-width: 25em;
+}
+
+.topic {
+    background-color: goldenrod;
+    border: 1px solid black;
+    border-radius: 3em 3em;
+    padding: 5px;
+    width: fit-content;
+}
+
+.date {
+    font-size: 12px;
+}
+
+.deleteDiv {
+    display: flex ;
+    justify-content: flex-end;
+}
+.deleteButton {
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}

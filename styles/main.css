@@ -1,29 +1,7 @@
+@import url('./letterForm.css');
+@import url('./letters.css');
 
-.field {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    margin: 0px 0px 10px 10px;
-}
-
-.topic-radios {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0px 0px 10px 10px;
-}
-
-.letters {
-    background-color: skyblue;
-    margin-bottom: 5px;
-    list-style-type: none;
-    padding: 5px;
-    max-width: 20em;
-}
-
-.topic {
-    border-radius: 10%;
-    background-color: goldenrod;
-    border: 1px solid black;
-    border-radius: 30%;
-    padding: 3px;
+body {
+    font-family: monospace;
+    font-size: 14px;
 }
