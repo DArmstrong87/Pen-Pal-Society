@@ -3,23 +3,22 @@ import { getAuthors, getTopics, sendLetter } from "./dataAccess.js";
 document.addEventListener("click",
     click => {
         if (click.target.name === 'sendLetter') {
-            let userAuthor = document.querySelector("select[name='authors']").value
+            let userAuthor = parseInt(document.querySelector("select[name='authors']").value)
             let userLetter = document.querySelector("textarea[name='letterArea']").value
             let userTopics = []
-            let allTopics = document.getElementsByName("input[name='topic']:checked").forEach(
-                topic => {
-                    userTopics.push(topic)
-                }
-            )
-            let userRecipient = document.querySelector("select[name='recipients']").value
+            let topicChecked = document.querySelectorAll("input[name='topic']:checked")
+            topicChecked.forEach(topic => {
+                userTopics.push(parseInt(topic.value))
+            })
+            let userRecipient = parseInt(document.querySelector("select[name='recipients']").value)
             if (userAuthor === userRecipient) {
                 window.alert('You cannot send a letter to yourself.')
             } else {
                 const dataToSendToAPI = {
-                    authorId: parseInt(userAuthor),
+                    authorId: userAuthor,
                     letterBody: userLetter,
                     topicId: userTopics,
-                    recipientId: parseInt(userRecipient),
+                    recipientId: userRecipient,
                     dateSent: Date.now()
                 }
                 sendLetter(dataToSendToAPI)

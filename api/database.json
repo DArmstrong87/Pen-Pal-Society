@@ -87,18 +87,35 @@
     {
       "authorId": 4,
       "letterBody": "Raven",
-      "topicId": [3],
+      "topicId": 3,
       "recipientId": 2,
       "dateSent": 1629123158874,
       "id": 6
     },
     {
-      "authorId": 1,
-      "letterBody": "terh",
-      "topicId": [],
+      "authorId": 3,
+      "letterBody": "sfdsadgras",
+      "topicId": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "recipientId": 4,
+      "dateSent": 1629131137317,
+      "id": 8
+    },
+    {
+      "authorId": 3,
+      "letterBody": "degsrftetr",
+      "topicId": [
+        1,
+        2
+      ],
       "recipientId": 2,
-      "dateSent": 1629124194902,
-      "id": 7
+      "dateSent": 1629131289168,
+      "id": 9
     }
   ]
 }
