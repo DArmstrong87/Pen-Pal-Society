@@ -27,11 +27,21 @@ export const fetchLetters = () => {
             }
         )
 }
+export const fetchLetterTopics = () => {
+    return fetch(`${API}/letterTopics`)
+        .then(response => response.json())
+        .then(
+            (letterTopics) => {
+                applicationState.letterTopics = letterTopics
+            }
+        )
+}
 
 export const applicationState = {
     authors: [],
     topics: [],
-    letters: []
+    letters: [],
+    letterTopics: []
 }
 
 
@@ -43,6 +53,9 @@ export const getTopics = () => {
 }
 export const getLetters = () => {
     return applicationState.letters.map(letter => ({ ...letter }))
+}
+export const getLetterTopics = () => {
+    return applicationState.letterTopics.map(letterTopic => ({ ...letterTopic }))
 }
 
 export const sendLetter = (userLetter) => {
@@ -73,9 +86,6 @@ export const sendLetterTopic = (userTopic) => {
 
     return fetch(`${API}/letterTopics`, fetchOptions)
         .then(response => response.json())
-        .then(() => {
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-        })
 }
 
 export const deleteLetter = (id) => {

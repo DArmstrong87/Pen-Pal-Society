@@ -99,13 +99,75 @@
       "recipientId": 3,
       "dateSent": 1629140749880,
       "id": 10
+    },
+    {
+      "authorId": 4,
+      "letterBody": "This displays multiple topics!",
+      "recipientId": 1,
+      "dateSent": 1629231916936,
+      "id": 11
     }
   ],
-  "letterTopics" : [
+  "letterTopics": [
     {
-      "id": 1,
-      "letterId": 1,
-      "topicId": 1
+      "topicId": 1,
+      "letterId": 3,
+      "id": 1
+    },
+    {
+      "topicId": 2,
+      "letterId": 4,
+      "id": 2
+    },
+    {
+      "topicId": 3,
+      "letterId": 5,
+      "id": 3
+    },
+    {
+      "topicId": 4,
+      "letterId": 6,
+      "id": 4
+    },
+    {
+      "topicId": 5,
+      "letterId": 7,
+      "id": 5
+    },
+    {
+      "topicId": 2,
+      "letterId": 8,
+      "id": 6
+    },
+    {
+      "topicId": 2,
+      "letterId": 9,
+      "id": 6
+    },
+    {
+      "topicId": 4,
+      "letterId": 10,
+      "id": 8
+    },
+    {
+      "topicId": 2,
+      "letterId": 3,
+      "id": 9
+    },
+    {
+      "topicId": 2,
+      "letterId": 11,
+      "id": 10
+    },
+    {
+      "topicId": 1,
+      "letterId": 11,
+      "id": 11
+    },
+    {
+      "topicId": 3,
+      "letterId": 11,
+      "id": 12
     }
   ]
 }

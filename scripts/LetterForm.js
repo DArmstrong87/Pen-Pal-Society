@@ -1,21 +1,23 @@
-import { getAuthors, getLetters, getTopics, sendLetter, sendLetterTopic } from "./dataAccess.js";
+import { getAuthors, getLetters, getLetterTopics, getTopics, sendLetter, sendLetterTopic } from "./dataAccess.js";
 
-document.addEventListener("changed",
+document.addEventListener("change",
     checked => {
         if (checked.target.name.startsWith('topic--')) {
-            const [, topicId] = check.target.name.split("--")
+            const [, topicId] = checked.target.name.split("--")
             const letters = getLetters()
             const findCurrentLetterId = () => {
                 const lastIndex = letters.length - 1
-                const lastId = letters[lastIndex].id
-                return lastId + 1
+                const currentId = letters[lastIndex].id + 1
+                return currentId
             }
             const currentLetterId = findCurrentLetterId()
             const userTopic = {
-                topicId: topicId,
+                topicId: parseInt(topicId),
                 letterId: currentLetterId
             }
             sendLetterTopic(userTopic)
+            const letterTopics = getLetterTopics()
+            console.log(letterTopics)
         }
     }
 )

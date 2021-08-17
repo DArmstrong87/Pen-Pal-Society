@@ -11,6 +11,7 @@
 
 .topics-p {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .topic {
@@ -20,6 +21,7 @@
     padding: 2px;
     width: fit-content;
     margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 .date {

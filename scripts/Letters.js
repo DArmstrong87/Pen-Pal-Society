@@ -1,4 +1,4 @@
-import { deleteLetter, getAuthors, getLetters, getTopics } from "./dataAccess.js";
+import { deleteLetter, getAuthors, getLetters, getLetterTopics, getTopics } from "./dataAccess.js";
 
 document.addEventListener("click", click => {
     if (click.target.id.startsWith("delete--")) {
@@ -26,22 +26,30 @@ export const Letters = () => {
                     return author.id === letter.recipientId
                 }
             )
-            const letterTopics = letter.topicId //array
-            const foundTopics = []
-            for (const letterTopic of letterTopics) {
-                for (const topic of topics) {
-                    if (letterTopic === topic.id) {
-                        foundTopics.push(topic)
+            const letterTopics = getLetterTopics() //array
+            const foundLetterTopics = letterTopics.filter(
+                letterTopic => {
+                    return letterTopic.letterId === letter.id
+                }
+            )
+            const foundTopics = topics.filter(
+                topic => {
+                    for (const letterTopic of foundLetterTopics) {
+                        if (topic.id === letterTopic.topicId) {
+                            return topic
+                        }
                     }
                 }
-            }
+            )
+
             const dateSent = new Date(letter.dateSent)
             return `
             <div class="letters">
                 Dear ${foundRecipient.name} (${foundRecipient.email})
                 <p>${letter.letterBody}</p>
                 <p>Sincerely, ${foundAuthor.name} (${foundAuthor.email})</p>
-                <div class="topics-p">${foundTopics.map(foundTopic => {
+                <div class="topics-p">
+                ${foundTopics.map(foundTopic => {
                 return `<div class="topic">${foundTopic.name}</div>`
             }).join("")}
                 </div>

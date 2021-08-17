@@ -1,4 +1,3 @@
-import { getLetters } from "./dataAccess.js"
 import { LetterForm } from "./LetterForm.js"
 import { Letters } from "./Letters.js"
 
