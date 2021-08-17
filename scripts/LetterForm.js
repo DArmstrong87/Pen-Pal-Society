@@ -60,10 +60,6 @@ For each object, it will have each topic as keys with a boolean as a value. {Bus
 The id for the LetterTopics object will be set as the letterTopicId when the letter is Posted.
 From that Id can be accessed which topics show as true.
 Set the last letter's id +1 as the letterId on the LetterTopics object
-
-
-
-
 */
 
 export const LetterForm = () => {
