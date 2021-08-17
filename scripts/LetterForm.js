@@ -1,8 +1,17 @@
 import { getAuthors, getLetters, getLetterTopics, getTopics, sendLetter, sendLetterTopic } from "./dataAccess.js";
 
+/* Event "change" listener:
+Each checked topic will POST its own unique id as a LetterTopics object.
+Each object will have an id, letterId and a topicId.
+The letterId of each of these objects will match the current letter.id before the letter is posted.
+LetterTopics will be iterated and matched with the letterId.
+Topics will be iterated and match with letterTopics.topicId
+*/
+
 document.addEventListener("change",
     checked => {
-        if (checked.target.name.startsWith('topic--')) {
+        const checkedTarget = checked.target.name.startsWith('topic--')
+        if (checkedTarget) {
             const [, topicId] = checked.target.name.split("--")
             const letters = getLetters()
             const findCurrentLetterId = () => {
@@ -15,9 +24,7 @@ document.addEventListener("change",
                 topicId: parseInt(topicId),
                 letterId: currentLetterId
             }
-            sendLetterTopic(userTopic)
-            const letterTopics = getLetterTopics()
-            console.log(letterTopics)
+                sendLetterTopic(userTopic)
         }
     }
 )
@@ -27,17 +34,6 @@ document.addEventListener("click",
         if (click.target.name === 'sendLetter') {
             let userAuthor = parseInt(document.querySelector("select[name='authors']").value)
             let userLetter = document.querySelector("textarea[name='letterArea']").value
-            let userTopics = []
-            let topicChecked = document.querySelectorAll("input[name='topic']:checked")
-            topicChecked.forEach(topic => {
-
-                userTopics.push(
-                    {
-                        topicId: parseInt(topic.value),
-                        letterId: letters.length + 1
-                    }
-                )
-            })
             let userRecipient = parseInt(document.querySelector("select[name='recipients']").value)
             if (userAuthor === userRecipient) {
                 window.alert('You cannot send a letter to yourself.')
@@ -53,14 +49,6 @@ document.addEventListener("click",
         }
     }
 )
-
-/*
-Each checked topic will POST its own unique id as a LetterTopics object.
-For each object, it will have each topic as keys with a boolean as a value. {Business: true}
-The id for the LetterTopics object will be set as the letterTopicId when the letter is Posted.
-From that Id can be accessed which topics show as true.
-Set the last letter's id +1 as the letterId on the LetterTopics object
-*/
 
 export const LetterForm = () => {
     const authors = getAuthors()
