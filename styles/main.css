@@ -4,4 +4,12 @@
 body {
     font-family: monospace;
     font-size: 14px;
+    background-color: lightgoldenrodyellow;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    background-color: skyblue;
+    padding: 5px;
 }

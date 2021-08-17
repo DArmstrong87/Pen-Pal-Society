@@ -81,20 +81,6 @@
     },
     {
       "authorId": 2,
-      "letterBody": "",
-      "recipientId": 1,
-      "dateSent": 1629138072642,
-      "id": 8
-    },
-    {
-      "authorId": 1,
-      "letterBody": "dsfgdsfdsgdf",
-      "recipientId": 4,
-      "dateSent": 1629138328776,
-      "id": 9
-    },
-    {
-      "authorId": 2,
       "letterBody": "Hello Steve",
       "recipientId": 3,
       "dateSent": 1629140749880,
@@ -106,6 +92,13 @@
       "recipientId": 1,
       "dateSent": 1629231916936,
       "id": 11
+    },
+    {
+      "authorId": 2,
+      "letterBody": "Why hello there. Things are finally clicking.",
+      "recipientId": 3,
+      "dateSent": 1629236257136,
+      "id": 12
     }
   ],
   "letterTopics": [
@@ -135,16 +128,6 @@
       "id": 5
     },
     {
-      "topicId": 2,
-      "letterId": 8,
-      "id": 6
-    },
-    {
-      "topicId": 2,
-      "letterId": 9,
-      "id": 6
-    },
-    {
       "topicId": 4,
       "letterId": 10,
       "id": 8
@@ -168,6 +151,21 @@
       "topicId": 3,
       "letterId": 11,
       "id": 12
+    },
+    {
+      "topicId": 1,
+      "letterId": 12,
+      "id": 13
+    },
+    {
+      "topicId": 2,
+      "letterId": 12,
+      "id": 14
+    },
+    {
+      "topicId": 4,
+      "letterId": 12,
+      "id": 15
     }
   ]
 }

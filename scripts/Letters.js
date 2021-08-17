@@ -45,9 +45,9 @@ export const Letters = () => {
             const dateSent = new Date(letter.dateSent)
             return `
             <div class="letters">
-                Dear ${foundRecipient.name} (${foundRecipient.email})
+                Dear ${foundRecipient.name} <i>(${foundRecipient.email})</i>
                 <p>${letter.letterBody}</p>
-                <p>Sincerely, ${foundAuthor.name} (${foundAuthor.email})</p>
+                <p>Sincerely, ${foundAuthor.name} <i>(${foundAuthor.email})</i></p>
                 <div class="topics-p">
                 ${foundTopics.map(foundTopic => {
                 return `<div class="topic">${foundTopic.name}</div>`
