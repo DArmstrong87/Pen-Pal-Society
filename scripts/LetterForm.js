@@ -1,4 +1,24 @@
-import { getAuthors, getTopics, sendLetter } from "./dataAccess.js";
+import { getAuthors, getLetters, getTopics, sendLetter, sendLetterTopic } from "./dataAccess.js";
+
+document.addEventListener("changed",
+    checked => {
+        if (checked.target.name.startsWith('topic--')) {
+            const [, topicId] = check.target.name.split("--")
+            const letters = getLetters()
+            const findCurrentLetterId = () => {
+                const lastIndex = letters.length - 1
+                const lastId = letters[lastIndex].id
+                return lastId + 1
+            }
+            const currentLetterId = findCurrentLetterId()
+            const userTopic = {
+                topicId: topicId,
+                letterId: currentLetterId
+            }
+            sendLetterTopic(userTopic)
+        }
+    }
+)
 
 document.addEventListener("click",
     click => {
@@ -8,7 +28,13 @@ document.addEventListener("click",
             let userTopics = []
             let topicChecked = document.querySelectorAll("input[name='topic']:checked")
             topicChecked.forEach(topic => {
-                userTopics.push(parseInt(topic.value))
+
+                userTopics.push(
+                    {
+                        topicId: parseInt(topic.value),
+                        letterId: letters.length + 1
+                    }
+                )
             })
             let userRecipient = parseInt(document.querySelector("select[name='recipients']").value)
             if (userAuthor === userRecipient) {
@@ -17,7 +43,6 @@ document.addEventListener("click",
                 const dataToSendToAPI = {
                     authorId: userAuthor,
                     letterBody: userLetter,
-                    topicId: userTopics,
                     recipientId: userRecipient,
                     dateSent: Date.now()
                 }
@@ -59,7 +84,7 @@ export const LetterForm = () => {
     <div class="topic-checkboxes">
         ${topics.map(topic => {
         return `
-            <input class="topic-checkbox" name="topic" type="checkbox" value="${topic.id}">${topic.name}</input>`
+            <input class="topic-checkbox" name="topic--${topic.id}" type="checkbox" value="${topic.id}">${topic.name}</input>`
     }).join("")}
     </div>
     <div class="field">

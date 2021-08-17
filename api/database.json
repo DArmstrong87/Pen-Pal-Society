@@ -47,11 +47,6 @@
     {
       "authorId": 1,
       "letterBody": "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
-      "topicId": [
-        1,
-        2,
-        3
-      ],
       "recipientId": 2,
       "dateSent": 1628887947562,
       "id": 3
@@ -59,9 +54,6 @@
     {
       "authorId": 3,
       "letterBody": "Good night, good night! parting is such sweet sorrow, That I shall say good night till it be morrow.",
-      "topicId": [
-        2
-      ],
       "recipientId": 4,
       "dateSent": 1629072539208,
       "id": 4
@@ -69,9 +61,6 @@
     {
       "authorId": 4,
       "letterBody": "Quoth the raven, \"Nevermore!\"",
-      "topicId": [
-        5
-      ],
       "recipientId": 2,
       "dateSent": 1629077595066,
       "id": 5
@@ -79,9 +68,6 @@
     {
       "authorId": 4,
       "letterBody": "Raven",
-      "topicId": [
-        3
-      ],
       "recipientId": 2,
       "dateSent": 1629123158874,
       "id": 6
@@ -89,10 +75,6 @@
     {
       "authorId": 4,
       "letterBody": "edrrhgswertht",
-      "topicId": [
-        2,
-        3
-      ],
       "recipientId": 3,
       "dateSent": 1629137844954,
       "id": 7
@@ -100,12 +82,6 @@
     {
       "authorId": 2,
       "letterBody": "",
-      "topicId": [
-        2,
-        3,
-        4,
-        5
-      ],
       "recipientId": 1,
       "dateSent": 1629138072642,
       "id": 8
@@ -113,10 +89,6 @@
     {
       "authorId": 1,
       "letterBody": "dsfgdsfdsgdf",
-      "topicId": [
-        2,
-        3
-      ],
       "recipientId": 4,
       "dateSent": 1629138328776,
       "id": 9
@@ -124,14 +96,16 @@
     {
       "authorId": 2,
       "letterBody": "Hello Steve",
-      "topicId": [
-        2,
-        3,
-        4
-      ],
       "recipientId": 3,
       "dateSent": 1629140749880,
       "id": 10
+    }
+  ],
+  "letterTopics" : [
+    {
+      "id": 1,
+      "letterId": 1,
+      "topicId": 1
     }
   ]
 }

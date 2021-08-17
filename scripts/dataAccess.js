@@ -61,6 +61,22 @@ export const sendLetter = (userLetter) => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
+export const sendLetterTopic = (userTopic) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userTopic)
+    }
+
+
+    return fetch(`${API}/letterTopics`, fetchOptions)
+        .then(response => response.json())
+        .then(() => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
 
 export const deleteLetter = (id) => {
     return fetch(`${API}/letters/${id}`, { method: "DELETE" })
