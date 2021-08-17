@@ -8,36 +8,64 @@ LetterTopics will be iterated and matched with the letterId.
 Topics will be iterated and match with letterTopics.topicId
 */
 
-document.addEventListener("change",
-    checked => {
-        const checkedTarget = checked.target.name.startsWith('topic--')
-        if (checkedTarget) {
-            const [, topicId] = checked.target.name.split("--")
-            const letters = getLetters()
+// document.addEventListener("change",
+//     checked => {
+//         const checkedTarget = checked.target.name.startsWith('topic--')
+//         if (checkedTarget) {
+//             const [, topicId] = checked.target.name.split("--")
+//             const letters = getLetters()
+//             const findCurrentLetterId = () => {
+//                 const lastIndex = letters.length - 1
+//                 const currentId = letters[lastIndex].id + 1
+//                 return currentId
+//             }
+//             const currentLetterId = findCurrentLetterId()
+//             const userTopic = {
+//                 topicId: parseInt(topicId),
+//                 letterId: currentLetterId
+//             }
+//             sendLetterTopic(userTopic)
+//         }
+//     }
+// )
+
+document.addEventListener("click",
+    click => {
+        const letters = getLetters()
+        if (click.target.name === 'sendLetter') {
+            let userAuthor = parseInt(document.querySelector("select[name='authors']").value)
+            let userLetter = document.querySelector("textarea[name='letterArea']").value
+            let userRecipient = parseInt(document.querySelector("select[name='recipients']").value)
+            let userTopics = document.querySelectorAll("input[name='topic']")
+            const findCheckedTopics = function () {
+                const array = []
+                for (const userTopic of userTopics) {
+                    if (userTopic.checked) {
+                        array.push(parseInt(userTopic.value))
+                    }
+                }
+                return array
+            }
+            const checkedTopics = findCheckedTopics()
             const findCurrentLetterId = () => {
                 const lastIndex = letters.length - 1
                 const currentId = letters[lastIndex].id + 1
                 return currentId
             }
             const currentLetterId = findCurrentLetterId()
-            const userTopic = {
-                topicId: parseInt(topicId),
-                letterId: currentLetterId
-            }
-                sendLetterTopic(userTopic)
-        }
-    }
-)
 
-document.addEventListener("click",
-    click => {
-        if (click.target.name === 'sendLetter') {
-            let userAuthor = parseInt(document.querySelector("select[name='authors']").value)
-            let userLetter = document.querySelector("textarea[name='letterArea']").value
-            let userRecipient = parseInt(document.querySelector("select[name='recipients']").value)
             if (userAuthor === userRecipient) {
                 window.alert('You cannot send a letter to yourself.')
             } else {
+                checkedTopics.forEach(
+                    topic => {
+                        const userTopic = {
+                            topicId: parseInt(topic),
+                            letterId: currentLetterId
+                        }
+                        sendLetterTopic(userTopic)
+                    }
+                )
                 const dataToSendToAPI = {
                     authorId: userAuthor,
                     letterBody: userLetter,
@@ -71,7 +99,7 @@ export const LetterForm = () => {
     <div class="topic-checkboxes" name="topics">
         ${topics.map(topic => {
         return `
-            <input class="topic-checkbox" name="topic--${topic.id}" type="checkbox" value="${topic.id}">${topic.name}</input>`
+            <input class="topic-checkbox" name="topic" type="checkbox" value="${topic.id}">${topic.name}</input>`
     }).join("")}
     </div>
     <div class="field">
