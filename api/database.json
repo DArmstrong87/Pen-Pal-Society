@@ -45,25 +45,8 @@
   ],
   "letters": [
     {
-      "id": 1,
-      "authorId": 4,
-      "recipientId": 3,
-      "topicId": 2,
-      "dateSent": 1628886891734,
-      "letterBody": "Hey just writing to remind you about what I stored under your floorboards. Kthx!"
-    },
-    {
-      "authorId": 3,
-      "letterBody": "All the world’s a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts.",
-      "topicId": 1,
-      "recipientId": 1,
-      "dateSent": 1628886891734,
-      "id": 2
-    },
-    {
       "authorId": 1,
       "letterBody": "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
-      "topicId": 1,
       "recipientId": 2,
       "dateSent": 1628887947562,
       "id": 3
@@ -71,7 +54,6 @@
     {
       "authorId": 3,
       "letterBody": "Good night, good night! parting is such sweet sorrow, That I shall say good night till it be morrow.",
-      "topicId": 2,
       "recipientId": 4,
       "dateSent": 1629072539208,
       "id": 4
@@ -79,10 +61,209 @@
     {
       "authorId": 4,
       "letterBody": "Quoth the raven, \"Nevermore!\"",
-      "topicId": 5,
       "recipientId": 2,
       "dateSent": 1629077595066,
       "id": 5
+    },
+    {
+      "authorId": 4,
+      "letterBody": "Raven",
+      "recipientId": 2,
+      "dateSent": 1629123158874,
+      "id": 6
+    },
+    {
+      "authorId": 4,
+      "letterBody": "edrrhgswertht",
+      "recipientId": 3,
+      "dateSent": 1629137844954,
+      "id": 7
+    },
+    {
+      "authorId": 2,
+      "letterBody": "Hello Steve",
+      "recipientId": 3,
+      "dateSent": 1629140749880,
+      "id": 10
+    },
+    {
+      "authorId": 4,
+      "letterBody": "This displays multiple topics!",
+      "recipientId": 1,
+      "dateSent": 1629231916936,
+      "id": 11
+    },
+    {
+      "authorId": 2,
+      "letterBody": "Why hello there. Things are finally clicking.",
+      "recipientId": 3,
+      "dateSent": 1629236257136,
+      "id": 12
+    },
+    {
+      "authorId": 1,
+      "letterBody": "Congratulations Ashley on your first day of becoming a doctor!",
+      "recipientId": 4,
+      "dateSent": 1629244055808,
+      "id": 13
+    },
+    {
+      "authorId": 2,
+      "letterBody": "dfhdfhgfd",
+      "recipientId": 1,
+      "dateSent": 1629244136710,
+      "id": 14
+    },
+    {
+      "authorId": 1,
+      "letterBody": "Steve is the best!",
+      "recipientId": 2,
+      "dateSent": 1629309775788,
+      "id": 15
+    },
+    {
+      "authorId": 3,
+      "letterBody": "This is one to delete.",
+      "recipientId": 1,
+      "dateSent": 1629316237933,
+      "id": 16
+    }
+  ],
+  "letterTopics": [
+    {
+      "topicId": 1,
+      "letterId": 3,
+      "id": 1
+    },
+    {
+      "topicId": 2,
+      "letterId": 4,
+      "id": 2
+    },
+    {
+      "topicId": 3,
+      "letterId": 5,
+      "id": 3
+    },
+    {
+      "topicId": 4,
+      "letterId": 6,
+      "id": 4
+    },
+    {
+      "topicId": 5,
+      "letterId": 7,
+      "id": 5
+    },
+    {
+      "topicId": 4,
+      "letterId": 10,
+      "id": 8
+    },
+    {
+      "topicId": 2,
+      "letterId": 3,
+      "id": 9
+    },
+    {
+      "topicId": 2,
+      "letterId": 11,
+      "id": 10
+    },
+    {
+      "topicId": 1,
+      "letterId": 11,
+      "id": 11
+    },
+    {
+      "topicId": 3,
+      "letterId": 11,
+      "id": 12
+    },
+    {
+      "topicId": 1,
+      "letterId": 12,
+      "id": 13
+    },
+    {
+      "topicId": 2,
+      "letterId": 12,
+      "id": 14
+    },
+    {
+      "topicId": 4,
+      "letterId": 12,
+      "id": 15
+    },
+    {
+      "topicId": 4,
+      "letterId": 13,
+      "id": 21
+    },
+    {
+      "topicId": 3,
+      "letterId": 14,
+      "id": 22
+    },
+    {
+      "topicId": 4,
+      "letterId": 14,
+      "id": 23
+    },
+    {
+      "topicId": 5,
+      "letterId": 14,
+      "id": 24
+    },
+    {
+      "topicId": 1,
+      "letterId": 14,
+      "id": 25
+    },
+    {
+      "topicId": 4,
+      "letterId": 14,
+      "id": 26
+    },
+    {
+      "topicId": 5,
+      "letterId": 14,
+      "id": 27
+    },
+    {
+      "topicId": 2,
+      "letterId": 15,
+      "id": 28
+    },
+    {
+      "topicId": 4,
+      "letterId": 15,
+      "id": 29
+    },
+    {
+      "topicId": 1,
+      "letterId": 16,
+      "id": 30
+    },
+    {
+      "topicId": 2,
+      "letterId": 16,
+      "id": 31
+    },
+    {
+      "topicId": 3,
+      "letterId": 16,
+      "id": 32
+    },
+    {
+      "topicId": 4,
+      "letterId": 16,
+      "id": 33
+    },
+    {
+      "topicId": 5,
+      "letterId": 16,
+      "id": 34
     }
   ]
 }

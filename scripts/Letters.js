@@ -1,8 +1,22 @@
-import { deleteLetter, getAuthors, getLetters, getTopics } from "./dataAccess.js";
+import { deleteLetter, getAuthors, getLetters, getLetterTopics, getTopics } from "./dataAccess.js";
 
 document.addEventListener("click", click => {
     if (click.target.id.startsWith("delete--")) {
         const [, letterId] = click.target.id.split("--")
+        
+        // const letterTopics = getLetterTopics()
+        // const topicsToDelete = letterTopics.filter(
+        //     letterTopic => {
+        //         if (letterTopic.letterId === parseInt(letterId)){
+        //             return letterTopic.id
+        //         }
+        //     }
+        // )
+        // topicsToDelete.forEach(
+        //     topictoDelete => {
+        //         deleteLetterTopics(topictoDelete.id)
+        //     }
+        // )
         deleteLetter(parseInt(letterId))
     }
 })
@@ -26,21 +40,37 @@ export const Letters = () => {
                     return author.id === letter.recipientId
                 }
             )
-            const foundTopic = topics.find(
-                topic => {
-                    return topic.id === letter.topicId
+            const letterTopics = getLetterTopics() //array
+            const foundLetterTopics = letterTopics.filter(
+                letterTopic => {
+                    return letterTopic.letterId === letter.id
                 }
             )
+            const foundTopics = topics.filter(
+                topic => {
+                    for (const letterTopic of foundLetterTopics) {
+                        if (topic.id === letterTopic.topicId) {
+                            return topic
+                        }
+                    }
+                }
+            )
+
             const dateSent = new Date(letter.dateSent)
             return `
             <div class="letters">
-                Dear ${foundRecipient.name} (${foundRecipient.email})
+                Dear ${foundRecipient.name} <i>(${foundRecipient.email})</i>
                 <p>${letter.letterBody}</p>
-                <p>Sincerely, ${foundAuthor.name} (${foundAuthor.email})</p>
-                <p><div class="topic">${foundTopic.name}</div></p>
+                <p>Sincerely, ${foundAuthor.name} <i>(${foundAuthor.email})</i></p>
+                <div class="topics-p">
+                ${foundTopics.map(foundTopic => {
+                return `<div class="topic">${foundTopic.name}</div>`
+            }).join("")}
+                </div>
                 <p class="date">Sent on ${dateSent}</p>
                 <div class="deleteDiv">
-                    <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete</button>
+                    <button class="deleteButton" name="deleteLetter" id="delete--${letter.id}">Delete
+                    </button>
                 </div>
             </div>`
         }

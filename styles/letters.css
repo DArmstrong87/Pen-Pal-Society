@@ -1,20 +1,29 @@
 .letters-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 .letters {
     background-color: skyblue;
     margin: 10px;
     padding: 5px;
     max-width: 25em;
+    border-radius: 10px;
+}
+
+.topics-p {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .topic {
     background-color: goldenrod;
     border: 1px solid black;
     border-radius: 3em 3em;
-    padding: 5px;
+    padding: 2px;
     width: fit-content;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 .date {
