@@ -8,27 +8,6 @@ LetterTopics will be iterated and matched with the letterId.
 Topics will be iterated and match with letterTopics.topicId
 */
 
-// document.addEventListener("change",
-//     checked => {
-//         const checkedTarget = checked.target.name.startsWith('topic--')
-//         if (checkedTarget) {
-//             const [, topicId] = checked.target.name.split("--")
-//             const letters = getLetters()
-//             const findCurrentLetterId = () => {
-//                 const lastIndex = letters.length - 1
-//                 const currentId = letters[lastIndex].id + 1
-//                 return currentId
-//             }
-//             const currentLetterId = findCurrentLetterId()
-//             const userTopic = {
-//                 topicId: parseInt(topicId),
-//                 letterId: currentLetterId
-//             }
-//             sendLetterTopic(userTopic)
-//         }
-//     }
-// )
-
 document.addEventListener("click",
     click => {
         const letters = getLetters()

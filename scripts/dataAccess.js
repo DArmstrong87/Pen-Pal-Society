@@ -88,6 +88,14 @@ export const sendLetterTopic = (userTopic) => {
         .then(response => response.json())
 }
 
+export const deleteLetterTopics = () => {
+    return fetch(`${API}/letterTopics/`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
 export const deleteLetter = (id) => {
     return fetch(`${API}/letters/${id}`, { method: "DELETE" })
         .then(
