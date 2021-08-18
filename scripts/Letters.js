@@ -1,22 +1,22 @@
-import { deleteLetter, deleteLetterTopics, getAuthors, getLetters, getLetterTopics, getTopics } from "./dataAccess.js";
+import { deleteLetter, getAuthors, getLetters, getLetterTopics, getTopics } from "./dataAccess.js";
 
 document.addEventListener("click", click => {
     if (click.target.id.startsWith("delete--")) {
         const [, letterId] = click.target.id.split("--")
         
-        const letterTopics = getLetterTopics()
-        const topicsToDelete = letterTopics.filter(
-            letterTopic => {
-                if (letterTopic.letterId === parseInt(letterId)){
-                    return letterTopic.id
-                }
-            }
-        )
-        topicsToDelete.forEach(
-            topictoDelete => {
-                deleteLetterTopics()
-            }
-        )
+        // const letterTopics = getLetterTopics()
+        // const topicsToDelete = letterTopics.filter(
+        //     letterTopic => {
+        //         if (letterTopic.letterId === parseInt(letterId)){
+        //             return letterTopic.id
+        //         }
+        //     }
+        // )
+        // topicsToDelete.forEach(
+        //     topictoDelete => {
+        //         deleteLetterTopics(topictoDelete.id)
+        //     }
+        // )
         deleteLetter(parseInt(letterId))
     }
 })

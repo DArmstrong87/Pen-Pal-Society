@@ -123,9 +123,9 @@
     },
     {
       "authorId": 3,
-      "letterBody": "Hello there",
-      "recipientId": 4,
-      "dateSent": 1629309814651,
+      "letterBody": "This is one to delete.",
+      "recipientId": 1,
+      "dateSent": 1629316237933,
       "id": 16
     }
   ],
@@ -251,9 +251,19 @@
       "id": 31
     },
     {
-      "topicId": 5,
+      "topicId": 3,
       "letterId": 16,
       "id": 32
+    },
+    {
+      "topicId": 4,
+      "letterId": 16,
+      "id": 33
+    },
+    {
+      "topicId": 5,
+      "letterId": 16,
+      "id": 34
     }
   ]
 }
