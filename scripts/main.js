@@ -4,10 +4,8 @@ import { penPalSociety } from "./PenPalSociety.js";
 export const mainContainer = document.querySelector('#mainContainer')
 
 const renderAll = () => {
-    fetchAuthors()
-    .then(fetchTopics)
-    .then(fetchLetterTopics)
-    .then(fetchLetters)
+    const promise = [fetchAuthors(), fetchTopics(), fetchLetterTopics(), fetchLetters()]
+    Promise.all(promise)
         .then(
             () => {
                 mainContainer.innerHTML = penPalSociety()
